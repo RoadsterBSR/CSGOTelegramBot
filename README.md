@@ -148,7 +148,7 @@ Unless you want to work on the sync app, you don't have to start another instanc
   
 ## Additional Contact Information
   
-Email: [RoadsterBSR@gmail.com](mailto:roadsterbsr@gmail.com)  
+Email: RoadsterBSR@gmail.com
 Steam: [RoadsterBSR](http://steamcommunity.com/id/RoadsterBSR/)
   
   
