@@ -177,8 +177,13 @@ For providing a homebase with great players and inspiring persons. RIP
   
 [TRLG](http://steamcommunity.com/groups/therelaxed)  
 For being a significant contributor to the current ZE community  
-
-
+  
+  
+  
+## License
+  
+This software is released and made available using the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.txt)
+  
 
   
 
