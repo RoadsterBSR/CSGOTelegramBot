@@ -52,6 +52,7 @@ public async Task SendFunctionName(long, string)
 ##### (Optional) If you want Telegram to show your new command to the user as an available command, register it at the BotFather with **/setcommands** 
   
   
+  
 ### Why is the bot return message not showing (correctly) in Telegram?
   
 Most of the time this is because of an improper format in the message. (At the time of writing this bot) Telegram uses a limited set of HTML OR Markdown to show the message.
@@ -63,6 +64,7 @@ public async Task<Message> SendMessage(long chatId, string message)
 	   return await Bot.SendTextMessage(chatId, message, false, 0, null, ParseMode.Html); 
 	}
 ```
+  
   
   
 ### I don't want to use the CSGOTelegramSync app/database, how can I change this?
@@ -107,3 +109,21 @@ foreach (PlayerInfo currentPlayer in players)
 	}
 }
 ```
+  
+  
+  
+### Why does it take a long time retrieving clan information? 
+  
+The only player information we can retrieve from a CSGO gameserver playerlist request is their Steam displayname.  
+To determine which clanmembers are online, we need to retrieve all current Steam displaynames from every clanmember configured in the Clan list in **Config.cs**.  
+Although the SteamApi calls are grouped to one request per clan, this still means there needs to be a lot of processing done for the return data.  
+Be cautious of the clans you want to include in the Telegram Bot. In short, it doesn't matter how many clans you add as long as the amount of clanmembers is not reaching the hundreds if not thousands.
+  
+For above reason there is a cache for claninformation implemented. (**ClanCache** in **BotHelper.cs**)  
+As a default the ClanCache is updated every hour. If you want to change this behaviour to another timeframe, adjust this variable in **BotHelper.cs**:  
+```C#
+int ClanUpdateHours = 1;
+```
+  
+PS: Be aware that the **ClanCache** is checked if it needs updating after each **SendCurrentClanPlayers** call.
+This also means that the very first Telegram user request after the Telegram Bot is put online will always take as long as it's needed to process the configured Clan information.
