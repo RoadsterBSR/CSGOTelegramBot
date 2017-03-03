@@ -2,7 +2,7 @@
 
 ## Quick Start
 1. Register a new bot on Telegram
-	See: https://core.telegram.org/bots#creating-a-new-bot
+	See: [Telegram API Docs](https://core.telegram.org/bots#creating-a-new-bot)
 2. Build the solution to download and install NuGet packages
 3. Open **CSGOTelegramData** project and edit in **Config.cs** the variables:  
   a. **BotNickname** (The precise username which is chosen when creating the bot in step 1, withouth the "@")  
@@ -143,3 +143,42 @@ public static string TelegramApiKey = "YourBotAuthenticationKey";
   
 That's it! Now you can run the bots side by side.  
 Unless you want to work on the sync app, you don't have to start another instance of that project since the bot is still configured to connect to the same database and as a benefit you have the same data at your immediate disposal as the bot running in 'production'.  
+  
+  
+  
+## Additional Contact Information
+  
+Email: [RoadsterBSR@gmail.com](mailto:roadsterbsr@gmail.com)  
+Steam: [RoadsterBSR](http://steamcommunity.com/id/RoadsterBSR/)
+  
+  
+  
+## Special Thanks
+
+The very first CSGOTelegramBot (MapeadoresBot) was created for the CSGO Zombie Escape Community server [Mapeadores](http://mapeadores.com/).  
+Being inspired and supported by the ZE Community is the reason this project has come to life and evolved to it's current form.  
+  
+Therefore I would like to thank everyone and in particular:  
+  
+[WAN](http://steamcommunity.com/id/wan186)  
+For the help and ideas in improving functionality and making the code more robust  
+  
+[CATKrash](http://steamcommunity.com/id/7656119806107987)  
+For providing data regarding the Mapeadores Server  
+  
+[Nick](http://steamcommunity.com/id/76561198006765411)  
+For introducing me to the dark Clan side of CSGO ZE and his general support  
+  
+[Unorth](http://steamcommunity.com/profiles/76561197972298323)  
+For adopting the MapeadoresBot and (potential) future improvements to CSGOTelegramBot  
+  
+[TNLE](http://steamcommunity.com/groups/TNLE)  
+For providing a homebase with great players and inspiring persons. RIP  
+  
+[TRLG](http://steamcommunity.com/groups/therelaxed)  
+For being a significant contributor to the current ZE community  
+
+
+
+  
+
