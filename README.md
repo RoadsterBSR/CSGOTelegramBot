@@ -26,7 +26,7 @@
 ## FAQ
 ### How do I add a new Telegram command?
   
-#### Add a **BotCommand** to the BotCommand List in **Config.cs**:  
+##### Add a **BotCommand** to the BotCommand List in **Config.cs**:  
 ```C#
 public static List<BotCommand> Commands = new List<BotCommand> {
 	new BotCommand { Command = "/start", Description = "List available commands", Function = "SendStart" },
@@ -44,19 +44,19 @@ Command: Command the user has to type in Telegram
 Description: A short description about the command. This will be displayed in the help command.  
 Function: The exact name of the function which will be called in **BotHelper.cs**  
   
-#### Create the function in **BotHelper.cs** with this method signature:  
+##### Create the function in **BotHelper.cs** with this method signature:  
 ```C#
 public async Task SendFunctionName(long, string)
 ```
 
-#### (Optional) If you want Telegram to show your new command to the user as an available command, register it at the BotFather with **/setcommands** 
+##### (Optional) If you want Telegram to show your new command to the user as an available command, register it at the BotFather with **/setcommands** 
   
   
 ### Why is the bot return message not showing (correctly) in Telegram?
   
 Most of the time this is because of an improper format in the message. (At the time of writing this bot) Telegram uses a limited set of HTML OR Markdown to show the message.
 If you're message isn't properly formatted, Telegram denies the SendMessage call. That's why you always need to HTML encode the playernames to filter unsupported characters and make sure your message has correct opening and closing tags.  
-PS: CSGOTelegramBot is configured to use HTML instead of Markdown. If you want to change this behaviour alter the **ParseMode** in the general **SendMessage** function:  
+PS: CSGOTelegramBot is configured to use HTML instead of Markdown. If you want to change this behaviour alter the **ParseMode** in the general **SendMessage** function to **ParseMode.Default** or **ParseMode.Markdown**:  
 ```C#
 public async Task<Message> SendMessage(long chatId, string message)
 	{
