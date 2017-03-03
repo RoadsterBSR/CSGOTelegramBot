@@ -126,4 +126,20 @@ int ClanUpdateHours = 1;
 ```
   
 PS: Be aware that the **ClanCache** is checked if it needs updating after each **SendCurrentClanPlayers** call.
-This also means that the very first Telegram user request after the Telegram Bot is put online will always take as long as it's needed to process the configured Clan information.
+This also means that the very first Telegram user request after the Telegram Bot is put online will always take as long as it's needed to process the configured Clan information since the ClanCache is still empty at that point.
+  
+  
+  
+## How can I develop/debug my Telegram Bot without affecting the currently online Bot?
+  
+Just as a tip. If you want to develop your Bot without taking it offline, just register another Bot with BotFather.  
+Give it an obscure name so nobody would (want to) find it when searching for new bots.  If you run several bots, you can use this one as development bot for each of them.  
+To get the development bot running, you only need to change at least these variables in **Config.cs** to the 'development bot settings':  
+```C#
+public static string BotNickname = "YourBotName";
+
+public static string TelegramApiKey = "YourBotAuthenticationKey";
+```
+  
+That's it! Now you can run the bots side by side.  
+Unless you want to work on the sync app, you don't have to start another instance of that project since the bot is still configured to connect to the same database and as a benefit you have the same data at your immediate disposal as the bot running in 'production'.  
