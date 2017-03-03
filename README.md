@@ -130,7 +130,7 @@ This also means that the very first Telegram user request after the Telegram Bot
   
   
   
-## How can I develop/debug my Telegram Bot without affecting the currently online Bot?
+### How can I develop/debug my Telegram Bot without affecting the currently online Bot?
   
 Just as a tip. If you want to develop your Bot without taking it offline, just register another Bot with BotFather.  
 Give it an obscure name so nobody would (want to) find it when searching for new bots.  If you run several bots, you can use this one as development bot for each of them.  
